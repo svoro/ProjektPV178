@@ -1,0 +1,10 @@
+﻿@model  ExpenseManager.Models.Card
+
+@{
+    ViewBag.Title = "Card";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1> Your balance is :  @Html.DisplayFor(model => model.Balance)</h1>
+@Html.ActionLink("Details", "Index", "Payments",null,new { @class = "btn btn-primary btn-large btn-block myNoFloat" } )
+ 

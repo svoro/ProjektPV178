@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ExpenseManager</h1>
+    <p class="lead">Manage your expenses easily in one place. </p>
+</div>
+
+<div class="row"></div>
+<div class="col-md-2">
+    <p>@Html.ActionLink("Check your Balance", "Index", "Cards", null, new { @class = "btn btn-primary btn-large btn-block" })</p>
+</div>
+<div class="col-md-2">
+
+    <p>@Html.ActionLink("Manage Payments", "Index", "Payments", null, new { @class = "btn btn-primary btn-large btn-block" }) </p>
+</div>
+</div>

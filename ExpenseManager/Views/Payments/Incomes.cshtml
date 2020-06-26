@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ExpenseManager.Models.Payment>
+
+@{
+    ViewBag.Title = "Incomes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Incomes</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            Details
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price);
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Add Income", "CreateIncome", new { id = ViewBag.Card }, new { @class = "btn btn-primary btn-block myFloat_Left1 " }) 
+    @Html.ActionLink("Back to List", "Index",null,new { @class = "btn btn-primary btn-block myFloat_Right1 " })
+</p><br />

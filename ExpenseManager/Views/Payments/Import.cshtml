@@ -1,0 +1,25 @@
+﻿@model ExpenseManager.Models.Payment
+
+@{
+    ViewBag.Title = "Import";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Choose csv file to import.</h2>
+<p>
+    File format : <br />
+    Name,Date,Price <br />
+    e.g. Income, 24.12.2019,1000<br />
+    Dinner, 25.12.2019,-340,50
+</p>
+<h3><font color="red">@ViewBag.ErrorMessage</font></h3>
+@using (Html.BeginForm("ImportAsync", "Payments", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <input type="file" name="file" />
+    </div>
+    <input type="submit" value="Submit" />
+}
+<hr />
+@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-block myFloat_Left1 " })
+<br />
