@@ -6,16 +6,16 @@
 }
 
 <h2>Payment Details</h2>
-<h3> Your current balance is:
+<h3> Your current balance is: </h3>
     @if (Model.Count() >= 1)
     {
-        Html.DisplayFor(model => model.First().Card.Balance);
+<h3> @Html.DisplayFor( model => model.First().Card.Balance) </h3>
     }
     else
     {
     <h3> 0,00kč</h3>
     }
-    </h3>
+    
 @Html.ValidationSummary()
 <p>
    

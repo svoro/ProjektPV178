@@ -2,7 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
-
+/* This class is created as a part of default project.
+ */
 namespace ExpenseManager.Models
 {
     public class IndexViewModel

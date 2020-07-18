@@ -6,7 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using ExpenseManager.Models;
-
+/* This class is created as a part of default project.
+ */
 namespace ExpenseManager
 {
     public partial class Startup

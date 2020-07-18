@@ -20,8 +20,7 @@ namespace ExpenseManager.Controllers
         [Authorize]
         public async Task<ActionResult> Index()
         {
-            var userId = User.Identity.GetUserId();
-            return View( db.Cards.Where(x => x.OwnerId == userId).First());
+            return View(await db.Cards.FindAsync(GetUserCardId()));
         }
 
         // GET: Cards/Details/5
@@ -46,6 +45,11 @@ namespace ExpenseManager.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        private int GetUserCardId()
+        {
+            var userId = User.Identity.GetUserId();
+            return db.Cards.Where(x => x.OwnerId == userId).First().Id;
         }
     }
 }

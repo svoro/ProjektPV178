@@ -11,7 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using ExpenseManager.Models;
-
+/* This class is created as a part of default project.
+ */
 namespace ExpenseManager
 {
     public class EmailService : IIdentityMessageService

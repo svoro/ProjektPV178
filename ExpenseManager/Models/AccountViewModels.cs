@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+/* This class is created as a part of default project.
+ */
 namespace ExpenseManager.Models
 {
     public class ExternalLoginConfirmationViewModel

@@ -105,7 +105,6 @@ namespace ExpenseManager.Controllers
         {
             if (ModelState.IsValid)
             {
-                var card = GetUserCard();
                 payment.CardId = GetUserCardId();
                 UpdateCardbalance(payment.Price);
                 db.Payments.Add(payment);
@@ -125,7 +124,10 @@ namespace ExpenseManager.Controllers
         {
             if (ModelState.IsValid)
             {
-                payment.Price = (-1) * payment.Price;
+                if (payment.Price > 0)
+                {
+                    payment.Price = (-1) * payment.Price;
+                }
                 payment.CardId = GetUserCardId();
 
                 if (!CardHasSufficient(payment.Price))
@@ -158,7 +160,10 @@ namespace ExpenseManager.Controllers
                         var columns = reader.ReadLine().Split(",".ToCharArray(), 3);
                         if (columns.Length == 3)
                         {
-
+                            if (columns[2].IndexOf('.') != -1)
+                            {
+                                columns[2] = columns[2].Replace('.', ',');
+                            }
                             if (!double.TryParse(columns[2], out _))
                             {
                                 ViewBag.ErrorMessage = "Failed to parse Price  : " + columns[2];
@@ -237,7 +242,7 @@ namespace ExpenseManager.Controllers
         private bool CardHasSufficient(double price)
         {
             var card = GetUserCard();
-            return card.Balance > price;
+            return price > 0? card.Balance > price : card.Balance > (-1) * price;
         }
 
         private void UpdateCardbalance(double price)

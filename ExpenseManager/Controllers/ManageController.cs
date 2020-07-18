@@ -7,7 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ExpenseManager.Models;
-
+/* This class is created as a part of default project.
+ */
 namespace ExpenseManager.Controllers
 {
     [Authorize]

@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
-
+/* This class is created as a part of default project.
+ */
 namespace ExpenseManager
 {
     public class BundleConfig
