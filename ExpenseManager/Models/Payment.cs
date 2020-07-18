@@ -16,7 +16,7 @@ namespace ExpenseManager.Models
         public string Name { get; set; }
 
         [Required]
-        [RegularExpression(@"\d{2}\.\d{2}\.\d{4}", ErrorMessage = "Date must be in DD.MM.YYY format")]
+        [RegularExpression(@"\d{2}\.\d{2}\.\d{4}", ErrorMessage = "Date must be in DD.MM.YYYY format")]
         public string Date
         {
             get { return _date; }
